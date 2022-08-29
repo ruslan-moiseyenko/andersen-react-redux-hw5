@@ -62,7 +62,7 @@ export const Product = () => {
             { loading ? (<div>Loading...</div>) :
                 (<div className={ styles.wrapper }>
                     <h2 className={ styles.title }>{ data.title }</h2>
-                    <img src={ data.images[0] } alt="product" className={ styles.img } />
+                    <img src={ data.image } alt="product" className={ styles.img } />
                     <div className={ styles.description }>Product description:
                         <p className={ styles.description__text }>{ data.description }</p>
                     </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchProducts } from '../store/asyncActions/getProducts';
-import { useDispatch } from 'react-redux'
-// import { getData } from '../utils/getData';
+import { useDispatch, useSelector } from 'react-redux'
+// import * as actions from '../store/actions';
 import { ProductCard } from '../components/ProductCard/ProductCard';
 import styles from './HomePage.module.css';
 
@@ -9,14 +9,14 @@ import styles from './HomePage.module.css';
 
 
 export function Home() {
-    const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
+    const products = useSelector((state) => state.products.products);
+    const status = useSelector((state) => state.products.status);
 
-    // useEffect(() => {
-    //     getData('').then((res) => res.json()).then(data => setProducts(data));
-    // }, []);
 
     useEffect(() => {
+
         dispatch(fetchProducts());
     }, [dispatch]);
 
@@ -31,5 +31,6 @@ export function Home() {
                 }
             </ul>
         </div>
+
     );
 };

@@ -1,6 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { createReducer } from '@reduxjs/toolkit';
-import { addToCart, deliteFromCart, fetchProductsAction } from './actions';
+import { addToCart, deliteFromCart } from './actions';
+import { fetchProducts } from './asyncActions/getProducts';
 
 //  {
 //     id: null,
@@ -31,10 +32,24 @@ const reducer = createReducer(initialState, {
       )
     };
   },
-  [fetchProductsAction]: (state, action) => {
+  [fetchProducts.fulfilled]: (state, action) => {
     return {
       ...state,
-      products: action.payload
+      products: action.payload,
+      status: 'fulfilled'
+    };
+  },
+  [fetchProducts.pending]: (state, action) => {
+    return {
+      ...state,
+      status: 'pending'
+    };
+  },
+  [fetchProducts.rejected]: (state, action) => {
+    return {
+      ...state,
+      error: true,
+      status: 'rejected'
     };
   }
 });
