@@ -1,0 +1,22 @@
+.cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.tytle {
+  font-size: 9px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.img {
+  width: 34px;
+  height: 34px;
+  margin-right: 10px;
+}
+
+.info {
+  text-align: center;
+}
