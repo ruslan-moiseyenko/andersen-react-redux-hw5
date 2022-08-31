@@ -1,10 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const prodURL = 'https://fakestoreapi.com/products';
-
 export const fetchProducts = createAsyncThunk(
   'products/FETCH_PRODUCTS',
-  async () => {
+  async (limit) => {
+    const prodURL = `https://fakestoreapi.com/products?limit=${limit}`;
     try {
       const response = await fetch(prodURL);
       const data = await response.json();

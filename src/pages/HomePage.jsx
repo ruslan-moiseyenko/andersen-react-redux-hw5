@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { fetchProducts } from '../store/asyncActions/getProducts';
-import { useDispatch, useSelector } from 'react-redux'
-// import * as actions from '../store/actions';
+import { changeLimit } from '../store/actions';
+import { useDispatch, useSelector } from 'react-redux';
 import { ProductCard } from '../components/ProductCard/ProductCard';
 import styles from './HomePage.module.css';
 
@@ -9,16 +9,19 @@ import styles from './HomePage.module.css';
 
 
 export function Home() {
-    // const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
     const products = useSelector((state) => state.products.products);
-    const status = useSelector((state) => state.products.status);
-
+    const limit = useSelector((state) => state.products.limit);
 
     useEffect(() => {
 
-        dispatch(fetchProducts());
-    }, [dispatch]);
+        dispatch(fetchProducts(limit));
+    }, [dispatch, limit]);
+
+    const onLoadMoreClick = () => {
+        dispatch(changeLimit());
+        // console.log('on load more button click');
+    };
 
     return (
         <div>
@@ -30,6 +33,7 @@ export function Home() {
                 ))
                 }
             </ul>
+            <button className={ styles.loadMoreProducts } onClick={ onLoadMoreClick }>Load More</button>
         </div>
 
     );

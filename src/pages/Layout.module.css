@@ -17,10 +17,19 @@
   color: #efefef;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
+.button:active {
+  color: black;
+  background-color: #efefef;
+}
+
 .activeStyle {
   text-decoration: underline;
   font-weight: 700;
-  color: green;
+  color: rgb(0, 61, 0);
 }
 
 .inactiveStyle {

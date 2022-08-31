@@ -18,6 +18,18 @@
 
 .closeButton {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 40px;
+  right: 40px;
+  background-color: black;
+  color: #efefef;
+  border: 1px solid #efefef;
+}
+
+.closeButton:hover {
+  cursor: pointer;
+}
+
+.closeButton:active {
+  color: black;
+  background-color: #efefef;
 }

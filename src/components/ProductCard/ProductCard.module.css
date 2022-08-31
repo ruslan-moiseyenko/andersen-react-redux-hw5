@@ -40,6 +40,15 @@
   color: #efefef;
 }
 
+.addButton:hover {
+  cursor: pointer;
+}
+
+.addButton:active {
+  color: black;
+  background-color: #efefef;
+}
+
 .activeStyle {
   text-decoration: underline;
 }

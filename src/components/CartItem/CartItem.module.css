@@ -1,0 +1,62 @@
+.underline {
+  border: 1px solid #f2f2f2;
+}
+
+.columnsHeadersWrapper {
+  width: 100%;
+  /* background-color: blue; */
+}
+
+.columnsHeaders {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.columnID {
+  width: 5%;
+}
+
+.columnName {
+  width: 35%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.columnPrice {
+  width: 20%;
+}
+
+.columnQuantity {
+  width: 10%;
+}
+.columnTotal {
+  width: 15%;
+}
+
+.columnDelite {
+  width: 15%;
+}
+
+.img {
+  height: 30px;
+  width: auto;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+
+.deliteBtn {
+  height: 40px;
+  width: 90px;
+  background-color: black;
+  color: #efefef;
+}
+
+.deliteBtn:hover {
+  cursor: pointer;
+}
+
+.deliteBtn:active {
+  color: black;
+  background-color: #efefef;
+}

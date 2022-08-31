@@ -11,3 +11,24 @@
   align-items: center;
   list-style: none;
 }
+
+.loadMoreProducts {
+  height: 30px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  background-color: black;
+  color: #efefef;
+}
+
+.loadMoreProducts:hover {
+  cursor: pointer;
+}
+
+.loadMoreProducts:active {
+  color: black;
+  background-color: #efefef;
+}

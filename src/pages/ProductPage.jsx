@@ -1,7 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../store/actions.js';
 import { getData } from '../utils/getData';
 import styles from './ProductPage.module.css';
+
 
 export const Product = () => {
     const { id } = useParams();
@@ -10,6 +13,7 @@ export const Product = () => {
     const [error, setError] = useState(false);
     const [count, setCount] = useState(1);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (error === false) {
@@ -51,10 +55,9 @@ export const Product = () => {
     };
 
     const onAddButton = () => {
-        // setQuantity((prev) => prev + count);
-        // setCost((prev) => (prev + (data.price * count)));
-        // setCount(0);
-        console.log('onAddButton');
+        const { title, price, image, id } = data;
+        let quantity = count;
+        dispatch(addToCart({ title, price, image, id, quantity }));
     }
 
     return (
