@@ -26,7 +26,7 @@ export const CartItem = ({ item }) => {
           <li className={ styles.columnQuantity }>{ quantity }</li>
           <li className={ styles.columnTotal }>{ inTotal }</li>
           <li className={ styles.columnDelite }>
-            <button className={ styles.deliteBtn } onClick={ handleClick } >Delite</button>
+            <button className={ styles.deliteBtn } onClick={ handleClick } >Delete</button>
           </li>
         </ul>
       </div>

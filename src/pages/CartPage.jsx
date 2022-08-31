@@ -24,7 +24,7 @@ export function CartPage() {
           <li className={ styles.columnPrice }>Price</li>
           <li className={ styles.columnQuantity }>Quantity</li>
           <li className={ styles.columnTotal }>In total</li>
-          <li className={ styles.columnDelite }>Delite</li>
+          <li className={ styles.columnDelite }>Delete</li>
         </ul>
       </div>
       <hr className={ styles.underline } />
